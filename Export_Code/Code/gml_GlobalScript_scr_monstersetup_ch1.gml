@@ -500,10 +500,9 @@ function scr_monstersetup_ch1() //gml_Script_scr_monstersetup_ch1
         global.actdesc[myself][1] = scr_84_get_lang_string_ch1("scr_monstersetup_slash_scr_monstersetup_gml_580_0")
         global.actcost[myself][1] = 50
         global.canact[myself][2] = true
-        global.actactor[myself][2] = 4
-        global.actname[myself][2] = scr_84_get_lang_string_ch1("scr_monstersetup_slash_scr_monstersetup_gml_585_0")
-        global.actdesc[myself][2] = scr_84_get_lang_string_ch1("scr_monstersetup_slash_scr_monstersetup_gml_586_0")
-        global.actcost[myself][2] = 125
+        global.actname[myself][2] = stringsetloc("X-Slash", "scr_monstersetup_slash_scr_monstersetup_gml_1643_0")
+        global.actdesc[myself][2] = stringsetloc("Physical#damage", "scr_monstersetup_slash_scr_monstersetup_gml_1644_0")
+        global.actcost[myself][2] = 62
     }
     if (global.monstertype[myself] == 21)
     {

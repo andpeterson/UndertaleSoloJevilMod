@@ -425,32 +425,64 @@ if (global.myfight == 3)
     }
     if (acting == 3 && actcon == 0)
     {
-        if (global.monsterat[myself] > 10)
-            global.monsterat[myself] -= 0.5
-        hypnofx = instance_create_ch1(global.monsterx[myself], global.monstery[myself], obj_hypnofx_ch1)
-        snd_play_ch1(snd_hypnosis_ch1)
-        actcon = 1
-        aaa = choose(0, 1, 2)
-        if (aaa == 0)
-            txtpart1 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_400_0")
-        if (aaa == 1)
-            txtpart1 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_401_0")
-        if (aaa == 2)
-            txtpart1 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_402_0")
-        txtpart2 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_403_0")
-        txtpart3 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_404_0")
-        if (hypnosiscounter == 0)
-            txtpart3 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_405_0")
-        if (hypnosiscounter >= 9)
+        with (obj_herokris_ch1)
+            visible = false
+        slashkris = scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_attack_ch1)
+        with (slashkris)
         {
-            txtpart3 = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_406_0")
-            global.monsterstatus[myself] = true
+            image_speed = 0.25
+            depth = obj_herokris_ch1.depth
+            a = scr_afterimage_ch1()
+            a.hspeed = 5
+            a.depth = (depth + 1)
+            b = scr_afterimage_ch1()
+            b.image_alpha = 0.6
+            b.hspeed = 5
+            b.depth = (depth + 2)
         }
-        global.msg[0] = (((txtpart1 + txtpart2) + txtpart3) + scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_407_0"))
-        pfactor = 0.7
-        hypnosis = 1
-        hypnosiscounter += 1
+        snd_play(snd_scytheburst)
+        snd_pitch(snd_scytheburst, 1.2)
+        actcon = 10
+        alarm[6] = 14
+        global.msg[0] = "* Kris used X-Slash!/%"
         scr_battletext_default_ch1()
+        caster = 0
+        var dmg = round(((((global.battleat[obj_herokris_ch1.myself] * 150) / 20) - (global.monsterdf[myself] * 3)) * 1.25))
+        scr_damage_enemy(0, dmg)
+    }
+    if (actcon == 11)
+    {
+        with (slashkris)
+            instance_destroy()
+        slashkris = scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_attack_ch1)
+        with (slashkris)
+        {
+            image_speed = 0.25
+            depth = (obj_herokris_ch1.depth + 1)
+            a = scr_afterimage_ch1()
+            a.hspeed = 5
+            a.depth = (depth + 1)
+            b = scr_afterimage_ch1()
+            b.image_alpha = 0.6
+            b.hspeed = 5
+            b.depth = (depth + 2)
+        }
+        snd_play(snd_scytheburst)
+        snd_pitch(snd_scytheburst, 1.2)
+        actcon = 12
+        alarm[6] = 14
+        caster = 0
+        dmg = round(((((global.battleat[obj_herokris_ch1.myself] * 150) / 20) - (global.monsterdf[myself] * 3)) * 1.25))
+        scr_damage_enemy(0, dmg)
+    }
+    if (actcon == 13)
+    {
+        with (slashkris)
+            instance_destroy()
+        with (obj_herokris_ch1)
+            visible = true
+        global.faceaction[myself] = 0
+        actcon = 1
     }
     if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
