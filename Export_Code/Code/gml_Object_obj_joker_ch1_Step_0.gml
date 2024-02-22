@@ -261,7 +261,7 @@ if (con == 3)
     scr_enemyblcon_ch1((x - 160), y, 3)
     con = 4
 }
-if (con == 4 && !instance_exists(obj_writer_ch1))
+if (con == 4 && (!instance_exists(obj_writer_ch1)))
 {
     hspeed = 15
     con = 5
@@ -297,7 +297,7 @@ if (global.myfight == 3)
         dancekris = scr_dark_marker_ch1(obj_herokris_ch1.x, obj_herokris_ch1.y, spr_krisb_pirouette_ch1)
         with (dancekris)
         {
-            image_speed = 0.333
+            image_speed = 0.3334
             depth = obj_herokris_ch1.depth
         }
         fx = instance_create_ch1((dancekris.x + 28), (dancekris.y + 40), obj_afterimage_grow_ch1)
@@ -306,7 +306,7 @@ if (global.myfight == 3)
         fx.image_yscale = 2
         scr_battletext_default_ch1()
     }
-    if (actcon == 5 && !instance_exists(obj_writer_ch1))
+    if (actcon == 5 && (!instance_exists(obj_writer_ch1)))
     {
         with (dancekris)
             instance_destroy()
@@ -362,7 +362,7 @@ if (global.myfight == 3)
         if (chaosdance == 5)
         {
             global.msg[0] = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_314_0")
-            star = choose(0, 1, 2)
+            star = 0
             scr_healitemspell_ch1(floor((random(31) + 25)))
         }
         if (chaosdance == 6)
@@ -380,37 +380,24 @@ if (global.myfight == 3)
                 remhp[i] = global.hp[i]
                 curmaxhp[i] = global.maxhp[i]
             }
+            remhp[1] = global.hp[1]
+            curmaxhp[1] = global.maxhp[1]
+            remhp[2] = pirouetteSusieCurHp
+            curmaxhp[2] = pirouetteSusieMaxHp
+            remhp[3] = pirouetteRalseiCurHp
+            curmaxhp[3] = pirouetteRalseiMaxHp
             global.maxhp[1] = curmaxhp[swap1]
-            global.maxhp[swap1] = curmaxhp[swap2]
-            global.maxhp[swap2] = curmaxhp[1]
+            pirouetteSusieMaxHp = curmaxhp[swap2]
+            pirouetteRalseiMaxHp = curmaxhp[1]
             global.hp[1] = remhp[swap1]
-            global.hp[swap1] = remhp[swap2]
-            global.hp[swap2] = remhp[1]
+            pirouetteSusieCurHp = remhp[swap2]
+            pirouetteRalseiCurHp = remhp[1]
             remhpcolor[0] = obj_battlecontroller_ch1.hpcolor[0]
-            remhpcolor[1] = obj_battlecontroller_ch1.hpcolor[1]
-            remhpcolor[2] = obj_battlecontroller_ch1.hpcolor[2]
+            remhpcolor[1] = pirouetteSusieHpColor
+            remhpcolor[2] = pirouetteRalseiHpColor
             obj_battlecontroller_ch1.hpcolor[0] = remhpcolor[(swap1 - 1)]
-            obj_battlecontroller_ch1.hpcolor[(swap1 - 1)] = remhpcolor[(swap2 - 1)]
-            obj_battlecontroller_ch1.hpcolor[(swap2 - 1)] = remhpcolor[0]
-            for (i = 1; i <= 3; i += 1)
-            {
-                if (global.hp[i] < 1)
-                {
-                    global.hp[1] += floor((global.hp[i] / 3))
-                    global.hp[2] += floor((global.hp[i] / 3))
-                    global.hp[3] += floor((global.hp[i] / 3))
-                    global.hp[i] = 1
-                }
-            }
-            if (global.hp[1] < 1)
-                global.hp[1] = 1
-            if (global.hp[2] < 1)
-                global.hp[2] = 1
-            if (global.hp[3] < 1)
-                global.hp[3] = 1
-            scr_revive_ch1(0)
-            scr_revive_ch1(1)
-            scr_revive_ch1(2)
+            pirouetteSusieHpColor = remhpcolor[(swap2 - 1)]
+            pirouetteRalseiHpColor = remhpcolor[0]
             snd_play_ch1(snd_weirdeffect_ch1)
         }
         if (chaosdance == 7)
@@ -465,7 +452,7 @@ if (global.myfight == 3)
         hypnosiscounter += 1
         scr_battletext_default_ch1()
     }
-    if (actcon == 1 && !instance_exists(obj_writer_ch1))
+    if (actcon == 1 && (!instance_exists(obj_writer_ch1)))
     {
         actcon = 0
         scr_attackphase_ch1()
