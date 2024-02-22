@@ -6240,5 +6240,12 @@
   "special_name_check_15": "BRATTY",
   "special_name_check_16": "GERSON",
   "special_name_check_17": "JOCKINGTON",
-  "special_name_check_18": "QC"
+  "special_name_check_18": "QC",
+  "solo_jevil_obj_jokerbattleevent_ch1_01_0": "* SO WHAT ARE WE PLAYING EXACTLY?/",
+  "solo_jevil_obj_jokerbattleevent_ch1_02_0": "* TO THINK THAT I'D BE EASY!^1 THE GAUL TO THINK YOU^1 CAN FIGHT ME ALONE/",
+  "solo_jevil_obj_jokerbattleevent_ch1_03_0": "* IF YOU HAVE SUCH A DEATHWISH RAISE YOUR SWORD AGAINST ME IF YOU DARE/%",
+  "solo_jevil_obj_jokerbattleevent_ch1_04_0": "* UEE HEE HEE^1! THEN PLAY WE SHALL^1! I WOULDN'T HAVE IT ANY OTHER WAY/",
+  "solo_jevil_obj_joker_ch1_01_0": "* Kris used X-Slash!/%",
+  "solo_jevil_obj_joker_ch1_02_0": "* JEVIL &* You chose this nightmare lol. Good luck!/%",
+  "solo_jevil_obj_joker_ch1_03_0": "* Kris swapped HP with someone!/%"
 }

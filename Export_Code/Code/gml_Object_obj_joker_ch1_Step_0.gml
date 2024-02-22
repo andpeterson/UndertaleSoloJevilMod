@@ -284,7 +284,7 @@ if (global.myfight == 3)
     if (acting == true && actcon == 0)
     {
         actcon = 1
-        global.msg[0] = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_237_0")
+        global.msg[0] = scr_84_get_lang_string_ch1("solo_jevil_obj_joker_ch1_02_0")
         scr_battletext_default_ch1()
     }
     if (acting == 2 && actcon == 0)
@@ -367,7 +367,7 @@ if (global.myfight == 3)
         }
         if (chaosdance == 6)
         {
-            global.msg[0] = scr_84_get_lang_string_ch1("obj_joker_slash_Step_0_gml_320_0")
+            global.msg[0] = scr_84_get_lang_string_ch1("solo_jevil_obj_joker_ch1_03_0")
             swap1 = 1
             swap2 = 1
             swap1 = choose(2, 3)
@@ -444,7 +444,7 @@ if (global.myfight == 3)
         snd_pitch(snd_scytheburst, 1.2)
         actcon = 10
         alarm[6] = 14
-        global.msg[0] = "* Kris used X-Slash!/%"
+        global.msg[0] = scr_84_get_lang_string_ch1("solo_jevil_obj_joker_ch1_01_0")
         scr_battletext_default_ch1()
         caster = 0
         var dmg = round(((((global.battleat[obj_herokris_ch1.myself] * 150) / 20) - (global.monsterdf[myself] * 3)) * 1.25))

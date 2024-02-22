@@ -60,10 +60,8 @@ if (con == 5)
     global.fc = 0
     global.msg[0] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_59_0")
     global.msg[1] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_60_0")
-    scr_ralface_ch1(2, 0)
-    global.msg[3] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_62_0")
-    scr_noface_ch1(4)
-    global.msg[5] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_64_0")
+    global.msg[2] = scr_84_get_lang_string_ch1("solo_jevil_obj_jokerbattleevent_ch1_01_0")
+    global.msg[3] = (("* YOU " + global.truename) + "^1, I'M GOING TO PLAY WITH YOU./%")
     instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 6
 }
@@ -138,8 +136,8 @@ if (con == 14)
     global.fe = 0
     global.typer = 35
     global.fc = 0
-    global.msg[0] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_140_0")
-    scr_susface_ch1(1, 0)
+    global.msg[0] = scr_84_get_lang_string_ch1("solo_jevil_obj_jokerbattleevent_ch1_02_0")
+    global.msg[1] = scr_84_get_lang_string_ch1("solo_jevil_obj_jokerbattleevent_ch1_03_0")
     global.msg[2] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_142_0")
     global.msg[3] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_143_0")
     instance_create_ch1(0, 0, obj_dialoguer_ch1)
@@ -166,8 +164,6 @@ if (con == 16)
 if (con == 17)
 {
     global.fe = 3
-    global.msg[0] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_175_0")
-    instance_create_ch1(0, 0, obj_dialoguer_ch1)
     con = 18
 }
 if (con == 18 && (!d_ex_ch1()))
@@ -181,7 +177,7 @@ if (con == 20)
 {
     global.typer = 35
     global.fc = 0
-    global.msg[0] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_192_0")
+    global.msg[0] = scr_84_get_lang_string_ch1("solo_jevil_obj_jokerbattleevent_ch1_04_0")
     global.msg[1] = scr_84_get_lang_string_ch1("obj_jokerbattleevent_slash_Step_0_gml_193_0")
     con = 21
     instance_create_ch1(0, 0, obj_dialoguer_ch1)
